@@ -1,17 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Lista de Pasteles
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+
+<ion-content>
+  <ion-card>  
+    <ion-card-header>  
+      <ion-card-subtitle>Pasteles</ion-card-subtitle>  
+      <ion-card-title>Varios Sabores</ion-card-title>  
+      </ion-card-header>  
+    <ion-card-content>  
+      Selecciona el que te más te gusta y obten información detallada  
+    </ion-card-content>  
+  </ion-card>  
+  <ion-list>
+    <ion-item *ngFor="let p of pasteles" [routerLink]="['/tabs/tab1/detalle',p.id]">
+      <ion-thumbnail slot="start">
+        <img [src]="p.imagen" />
+      </ion-thumbnail>
+      <ion-label>{{ p.nombre}}</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+

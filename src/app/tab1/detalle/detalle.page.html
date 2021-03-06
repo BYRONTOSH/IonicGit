@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/tab1"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Información</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-app>
+    <ion-content fullscreen>
+      <ion-card *ngFor="let p of pastel">
+        <img [src]="p.imagen" />
+        <ion-card-header>
+          <ion-card-subtitle>Detalle del Pastel</ion-card-subtitle>
+          <ion-card-title>{{p.nombre}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>Precio: ${{p.precio}}</ion-card-content>
+        <ion-card-content>Fecha de elaboración: {{p.fecha}}</ion-card-content>
+        <ion-card-content>Proveedor: {{p.proveedor}}</ion-card-content>
+        <ion-card-content>Tamaño: {{p.tamanio}}</ion-card-content>
+      </ion-card>
+    </ion-content>
+  </ion-app>
+
+
+</ion-content>
